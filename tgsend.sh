@@ -70,9 +70,9 @@ host=$(echo "$result" | awk -F'|' '{print $2}')
 user=$(echo "$result" | awk -F'|' '{print $3}')
 
 if [[ "$BUTTON_URL" == "null" ]]; then
-  button_url="https://panel15.serv00.com/"
+  button_url="https://serv.gxlz.cloudns.org/"
 else
-  button_url=${BUTTON_URL:-"https://panel15.serv00.com/"}
+  button_url=${BUTTON_URL:-"https://serv.gxlz.cloudns.org/"}
 fi
 
 URL="https://api.telegram.org/bot${telegramBotToken}/sendMessage"
