@@ -31,7 +31,7 @@ urlencode() {
 
 toTGMsg() {
   local msg=$1
-  local title="*Serv00-play通知*"
+  local title="*Serv00保活通知*"
   local host_icon="🖥️"
   local user_icon="👤"
   local time_icon="⏰"
@@ -70,9 +70,9 @@ host=$(echo "$result" | awk -F'|' '{print $2}')
 user=$(echo "$result" | awk -F'|' '{print $3}')
 
 if [[ "$BUTTON_URL" == "null" ]]; then
-  button_url="https://www.youtube.com/@frankiejun8965"
+  button_url="https://panel15.serv00.com/"
 else
-  button_url=${BUTTON_URL:-"https://www.youtube.com/@frankiejun8965"}
+  button_url=${BUTTON_URL:-"https://panel15.serv00.com/"}
 fi
 
 URL="https://api.telegram.org/bot${telegramBotToken}/sendMessage"
