@@ -31,11 +31,11 @@ urlencode() {
 
 toTGMsg() {
   local msg=$1
-  local title="*Serv00保活通知*"
+  local title="*Serv00当前状态通知*"
   local host_icon="🖥️"
   local user_icon="👤"
-  local time_icon="⏰"
-  local notify_icon="📢"
+  local time_icon="⌚"
+  local notify_icon="🔈"
 
   # 获取当前时间
   local current_time=$(date "+%Y-%m-%d %H:%M:%S")
@@ -43,7 +43,7 @@ toTGMsg() {
   if [[ "$msg" != Host:* ]]; then
     local formatted_msg="${title}  \n\n"
     formatted_msg+="${time_icon} *时间：* ${current_time}  \n"
-    formatted_msg+="${notify_icon} *通知内容：*    \n$msg  \n\n"
+    formatted_msg+="${notify_icon} *当前状态：*    \n$msg  \n\n"
     echo -e "$formatted_msg"
     return
   fi
@@ -54,10 +54,10 @@ toTGMsg() {
 
   # 格式化消息内容，Markdown 换行使用两个空格 + 换行
   local formatted_msg="${title}  \n\n"
-  formatted_msg+="${host_icon} *主机：* ${host}  \n"
-  formatted_msg+="${user_icon} *用户：* ${user}  \n"
+  formatted_msg+="${host_icon} *主机归宿：* ${host}  \n"
+  formatted_msg+="${user_icon} *账户名：* ${user}  \n"
   formatted_msg+="${time_icon} *时间：* ${current_time}  \n\n"
-  formatted_msg+="${notify_icon} *通知内容：* ${notify_content}  \n\n"
+  formatted_msg+="${notify_icon} *当前状态：* ${notify_content}  \n\n"
 
   echo -e "$formatted_msg|${host}|${user}" # 使用 -e 选项以确保换行符生效
 }
