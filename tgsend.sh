@@ -70,9 +70,9 @@ host=$(echo "$result" | awk -F'|' '{print $2}')
 user=$(echo "$result" | awk -F'|' '{print $3}')
 
 if [[ "$BUTTON_URL" == "null" ]]; then
-  button_url="http://128.204.223.117:34801/"
+  button_url="http://panel.mlevdqxk.serv00.net/"
 else
-  button_url=${BUTTON_URL:-"http://128.204.223.117:34801/"}
+  button_url=${BUTTON_URL:-"http://panel.mlevdqxk.serv00.net/"}
 fi
 
 URL="https://api.telegram.org/bot${telegramBotToken}/sendMessage"
