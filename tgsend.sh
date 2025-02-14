@@ -70,9 +70,9 @@ host=$(echo "$result" | awk -F'|' '{print $2}')
 user=$(echo "$result" | awk -F'|' '{print $3}')
 
 if [[ "$BUTTON_URL" == "null" ]]; then
-  button_url="https://github.com/my8211060/news/actions/workflows/deploy.yml"
+  button_url="https://github.com/my82110600/news/actions"
 else
-  button_url=${BUTTON_URL:-"https://github.com/my8211060/news/actions/workflows/deploy.yml"}
+  button_url=${BUTTON_URL:-"https://github.com/my82110600/news/actions"}
 fi
 
 URL="https://api.telegram.org/bot${telegramBotToken}/sendMessage"
